@@ -28,7 +28,6 @@ registry_costs_df <- data.table(read_csv(file = 'data/registry_costs.csv')) %>%
     , invoice_date = mdy(invoice_date)
     , hours = as.numeric(hours)
     , dollars = as.numeric(dollars)
-    
     )] %>% .[]
 
 registry_costs_df[,`:=`(fiscal_period = conv_date_to_fiscal_period(invoice_date)
@@ -71,39 +70,47 @@ start_fperiod <- min(unique(registry_diffs$fiscal_period))
 fiscal_period_repl[1] <- start_fperiod
 
 
-
 # load to database --------------------------------------------------------
 
-### after comparing what would need to be updated, remove data from periods that are in the parameter
-dbGetQuery(conn = db_con
-           , statement = paste0("DELETE FROM registry_costs_fact
-                                where fiscal_period between '", fiscal_period_repl[1]
-                                ,"' and '", fiscal_period_repl[2],"' ")
-           )
-dbExecute(conn = db_con
-          , statement = )
-### load data to the target table for the periods that need to be loaded
-dbWriteTable(conn = db_con
-             , name = Id( table = "registry_costs_fact")
-             , value = as.data.frame(registry_costs_df[between(fiscal_period
-                                                               , fiscal_period_repl[1]
-                                                               , fiscal_period_repl[2])
-                                                       ,.(entity
-                                                          , department
-                                                          , employee_name
-                                                          , invoice_date
-                                                          , hours
-                                                          , dollars
-                                                          , fiscal_period
-                                                          )]) 
-             , append = TRUE # note that this is to append the table 
+if(nrow(registry_diffs)>1) {
+  paste0("getting ready to load: ", nrow(registry_diffs))
+  
+  ### after comparing what would need to be updated, remove data from periods that are in the parameter
+  dbGetQuery(conn = db_con
+             , statement = paste0("
+                                  DELETE FROM registry_costs_fact
+                                  where fiscal_period between '"
+                                  , fiscal_period_repl[1]
+                                  ,"' and '"
+                                  , fiscal_period_repl[2],"' "
+                                  )
              )
+  
+  ### load data to the target table for the periods that need to be loaded
+  dbWriteTable(conn = db_con
+               , name = Id( table = "registry_costs_fact")
+               , value = as.data.frame(registry_costs_df[between(fiscal_period
+                                                                 , fiscal_period_repl[1]
+                                                                 , fiscal_period_repl[2])
+                                                         ,.(entity
+                                                            , department
+                                                            , employee_name
+                                                            , invoice_date
+                                                            , hours
+                                                            , dollars
+                                                            , fiscal_period
+                                                         )]) 
+               , append = TRUE # note that this is to append the table
+               )
+  } else {
+    paste0("no new records to upload for registry_costs_fact")
+    
+    }
 
 
 # post-load validation ----------------------------------------------------
 
 data.table(dbGetQuery(conn = db_con
                       , statement = paste0("select * from registry_costs_fact")))
-
 
 
