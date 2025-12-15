@@ -13,6 +13,7 @@ models:
       - name: member_id
       - name: provider_id
       - name: service_date
+      - name: posted_date
       - name: billed_amount
       - name: paid_amount
       - name: claim_status

@@ -1,0 +1,33 @@
+
+version: 2
+
+models:
+  - name: fact_claims
+    description: Fact model for claims data
+    columns:
+      - name: claim_id
+        description: Unique key for this table
+        data_tests:
+          - unique
+          - not_null
+      - name: member_id
+        description: |
+          ID associated with member
+      - name: provider_id
+        description: |
+          ID for provider associated with claim record
+      - name: service_date
+        description: |
+          Date of service for associated claim record
+      - name: posted_date
+        description: |
+          Date of when claim was posted for associated claim record
+      - name: billed_amount
+        description: |
+          Billable amount for services associated with claim record
+      - name: paid_amount
+        description: |
+          Paid amount for services associated with claim record
+      - name: claim_status
+        description: |
+          Status of clain associated with claim record

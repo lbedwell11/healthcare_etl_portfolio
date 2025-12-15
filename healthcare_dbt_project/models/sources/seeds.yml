@@ -1,0 +1,12 @@
+
+version: 2
+
+sources:
+  - name: seeds
+    schema: main_raw
+    tables:
+      - name: claims
+      - name: members
+      - name: providers
+
+  

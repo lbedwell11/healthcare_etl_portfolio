@@ -1,0 +1,30 @@
+
+version: 2
+
+models:
+  - name: dim_members
+    description: Displays member detail at 1 row per `member_id`
+    columns:
+      - name: member_id
+        description: Unique key for this table
+        data_tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: |
+          First name of member associated with member id
+      - name: last_name
+        description: |
+          Last name of member associated with member id
+      - name: full_name
+        description: |
+          Full name of member associated with member id
+      - name: date_of_birth
+        description: |
+          Date of birth for member associated with member id
+      - name: gender
+        description: |
+          Gender of member associated with member id
+      - name: member_age
+        description: |
+          Age of member associated with member id

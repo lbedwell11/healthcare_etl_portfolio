@@ -39,7 +39,8 @@ models:
       +schema: dimensions
     marts:
       +materialized: view
-      +schema: fact
+      +schema: clinical
+      +schema: financial
     prep:
       +materialized: ephemeral
     staging:

@@ -1,12 +1,12 @@
 with
 
-source as (
+stg_providers as (
 
     select
         provider_id,
         provider_name,
         specialty
-    from {{ source('seeds', 'providers')}}
+    from {{ ref('stg_providers') }}
 
 )
 
@@ -14,4 +14,4 @@ select
     provider_id,
     provider_name,
     specialty
-from source
+from stg_providers

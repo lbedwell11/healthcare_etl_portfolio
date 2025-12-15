@@ -1,17 +1,17 @@
 with
 
-source as (
+stg_claims as (
 
     select
         claim_id,
         member_id,
         provider_id,
-        cast(service_date as date) as service_date,
-        cast(posted_date as date) as posted_date,
+        service_date,
+        posted_date,
         billed_amount,
         paid_amount,
         claim_status
-    from {{ source('seeds', 'claims') }}
+    from {{ ref('stg_claims') }}
 
 )
 
@@ -24,4 +24,4 @@ select
     billed_amount,
     paid_amount,
     claim_status
-from source
+from stg_claims
