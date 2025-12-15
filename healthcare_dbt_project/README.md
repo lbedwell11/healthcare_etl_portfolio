@@ -1,15 +1,19 @@
-Welcome to your new dbt project!
 
-### Using the starter project
+### Healthcare dbt Project
 
-Try running the following commands:
-- dbt run
-- dbt test
+This repo contains the dbt transformation layer for the broader *Healthcare Analytics ETL Portfolio*. The goal of this project is to model realistic healthcare data using modern anlytics engineering best practices.
 
+---
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+### Project Purpose
+This dbt project demonstrates how raw healthcare data (e.g., claims, members, providers) can be transformed into clean, analytics-ready models suitable for downstream reporting and analysis. It is designed to mirror real-world healthcare data workflows while remaining lightweight for portfolio purposes.
+
+# Objectives:
+- apply analytics engineering patterns (staging --> marts)
+- enforce data quality with tests and documentation
+
+### Tech Stack
+- dbt Core: deploy transformations, testing, documentation
+- DuckDB / DBeaver: utilize local analytical database management
+- Python (venv): isolate dependencies
+- CSV seeds: simulate raw source data
