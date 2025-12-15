@@ -1,21 +1,18 @@
 
-# version: 2
+version: 2
 
-# models:
-#   - name: my_first_dbt_model
-#     description: "A starter dbt model"
-#     columns:
-#       - name: id
-#         description: "The primary key for this table"
-#         data_tests:
-#           - unique
-#           - not_null
-
-#   - name: my_second_dbt_model
-#     description: "A starter dbt model"
-#     columns:
-#       - name: id
-#         description: "The primary key for this table"
-#         data_tests:
-#           - unique
-#           - not_null
+models:
+  - name: stg_claims
+    description: Staging model for claims data
+    columns:
+      - name: claim_id
+        description: Unique key for this table
+        data_tests:
+          - unique
+          - not_null
+      - name: member_id
+      - name: provider_id
+      - name: service_date
+      - name: billed_amount
+      - name: paid_amount
+      - name: claim_status

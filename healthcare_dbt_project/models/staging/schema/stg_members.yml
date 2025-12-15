@@ -1,0 +1,17 @@
+
+version: 2
+
+models:
+  - name: stg_members
+    description: Staging model for member data
+    columns:
+      - name: member_id
+        description: Unique key for this table
+        data_tests:
+          - unique
+          - not_null
+      - name: first_name
+      - name: last_name
+      - name: full_name
+      - name: date_of_birth
+      - name: gender
