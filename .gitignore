@@ -212,7 +212,7 @@ __marimo__/
 .RData
 .Ruserdata
 .Rproj.user/
-.Rproj
+*.Rproj
 .Renviron
 
 # renv folders
