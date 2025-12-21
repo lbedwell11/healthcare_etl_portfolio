@@ -5,6 +5,7 @@ source as (
     select
         provider_id,
         provider_name,
+        department,
         specialty
     from {{ source('seeds', 'providers')}}
 
@@ -13,5 +14,6 @@ source as (
 select
     provider_id,
     provider_name,
+    department,
     specialty
 from source

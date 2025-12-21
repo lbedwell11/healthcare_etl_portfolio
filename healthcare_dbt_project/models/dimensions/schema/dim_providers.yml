@@ -13,6 +13,9 @@ models:
       - name: provider_name
         description: |
           Name of provider associated with provider id
+      - name: department
+        description: |
+          Department of provider associated with provider id
       - name: specialty
         description: |
           Specialty of provider associated with provider id

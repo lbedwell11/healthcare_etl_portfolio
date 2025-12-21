@@ -11,4 +11,5 @@ models:
           - unique
           - not_null
       - name: provider_name
+      - name: department
       - name: specialty

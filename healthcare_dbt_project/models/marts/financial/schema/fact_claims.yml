@@ -10,12 +10,15 @@ models:
         data_tests:
           - unique
           - not_null
-      - name: member_id
+      - name: mrn
         description: |
-          ID associated with member
-      - name: provider_id
+          ID associated with patient
+      - name: hospital_account_id
         description: |
-          ID for provider associated with claim record
+          ID for patient's hospital account associated with claim record
+      - name: entity_id
+        description: |
+          ID for entity associated with claim record
       - name: service_date
         description: |
           Date of service for associated claim record

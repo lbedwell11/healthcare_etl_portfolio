@@ -1,0 +1,14 @@
+entity_id,department_id,department_name,clinical_group
+100,6000000,Intensive Care Unit - Central,Inpatient Units
+100,6100000,Med Surg - Central,Inpatient Units
+100,7100000,Outpatient Clinic - Central,Clinics
+100,7700000,Main Operating Room - Central,OR
+100,7800000,Ambulatory Imaging Center - Central,Imaging
+110,6000000,Intensive Care Unit - South,Inpatient Units
+110,6100000,Med Surg - South,Inpatient Units
+110,7100000,Outpatient Clinic - South,Clinics
+110,7700000,Main Operating Room - South,OR
+120,6000000,Intensive Care Unit - North,Inpatient Units
+120,6100000,Med Surg - North,Inpatient Units
+120,7100000,Outpatient Clinic - North,Clinics
+120,7700000,Main Operating Room - North,OR

@@ -1,4 +1,5 @@
-provider_id,provider_name,specialty
-10,Central Hospital,Cardiology
-11,Valley Clinic,Primary Care
-12,North Imaging Center,Radiology
+provider_id,provider_name,department,specialty
+10239,Henry Smith,Surgery,General Surgery
+10240,Amy Jones,Surgery,Orthopedic Surgery
+10241,Harrison Lee,Surgery,Neuro Surgery
+10242,James Black,Family Practice,Family Practice

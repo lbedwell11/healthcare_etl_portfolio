@@ -4,8 +4,9 @@ stg_claims as (
 
     select
         claim_id,
-        member_id,
-        provider_id,
+        mrn,
+        hospital_account_id,
+        entity_id,
         service_date,
         posted_date,
         billed_amount,
@@ -17,8 +18,9 @@ stg_claims as (
 
 select
     claim_id,
-    member_id,
-    provider_id,
+    mrn,
+    hospital_account_id,
+    entity_id,
     service_date,
     posted_date,
     billed_amount,

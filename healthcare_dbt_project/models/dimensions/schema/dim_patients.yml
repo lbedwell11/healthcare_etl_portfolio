@@ -2,10 +2,10 @@
 version: 2
 
 models:
-  - name: dim_members
-    description: Displays member detail at 1 row per `member_id`
+  - name: dim_patients
+    description: Displays patient detail at 1 row per `mrn`
     columns:
-      - name: member_id
+      - name: mrn
         description: Unique key for this table
         data_tests:
           - unique

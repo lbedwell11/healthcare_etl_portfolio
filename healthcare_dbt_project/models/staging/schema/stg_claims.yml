@@ -10,8 +10,9 @@ models:
         data_tests:
           - unique
           - not_null
-      - name: member_id
-      - name: provider_id
+      - name: mrn
+      - name: hospital_account_id
+      - name: entity_id
       - name: service_date
       - name: posted_date
       - name: billed_amount

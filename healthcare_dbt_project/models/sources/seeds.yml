@@ -5,8 +5,12 @@ sources:
   - name: seeds
     schema: main_raw
     tables:
+      - name: billing_charges
       - name: claims
-      - name: members
+      - name: departments
+      - name: entity
+      - name: general_ledger
+      - name: patients
       - name: providers
-
+      - name: surgery
   

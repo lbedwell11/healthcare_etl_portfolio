@@ -1,0 +1,8 @@
+journal_id,post_date,entity_id,department_id,account,fund,description,amount
+30001,2024-01-31,100,7700000,420000,1000,January surgical charges - Central OR,9700.00
+30002,2024-01-31,110,7700000,420000,1000,January surgical charges - South OR,14500.00
+30003,2024-01-31,120,7700000,420000,1000,January surgical charges - North OR,500.00
+30004,2024-02-28,100,7700000,131000,1000,Accounts receivable adjustment,-850.00
+30005,2024-01-15,100,7700000,602000,1000,Supplies - Surgical,-2575.00
+30006,2024-01-29,110,7700000,602000,1000,Supplies - Surgical,-3100.00
+30007,2024-02-01,120,7700000,602000,1000,Supplies - Surgical,-1523.00

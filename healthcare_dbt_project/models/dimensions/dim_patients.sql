@@ -1,38 +1,38 @@
 with
 
-stg_members as (
+stg_patients as (
 
     select
-        member_id,
+        mrn,
         first_name,
         last_name,
         full_name,
         date_of_birth,
         gender
-    from {{ ref('stg_members') }}
+    from {{ ref('stg_patients') }}
 
 ),
 
-dim_members as (
+dim_patients as (
 
     select
-        member_id,
+        mrn,
         first_name,
         last_name,
         full_name,
         date_of_birth,
         gender,
-        datediff('year', date_of_birth::date, today()) as member_age
-    from stg_members
+        datediff('year', date_of_birth::date, today()) as patient_age
+    from stg_patients
 
 )
 
 select
-    member_id,
+    mrn,
     first_name,
     last_name,
     full_name,
     date_of_birth,
     gender,
-    member_age
-from dim_members
+    patient_age
+from dim_patients

@@ -2,10 +2,10 @@
 version: 2
 
 models:
-  - name: stg_members
-    description: Staging model for member data
+  - name: stg_patients
+    description: Staging model for patient data
     columns:
-      - name: member_id
+      - name: mrn
         description: Unique key for this table
         data_tests:
           - unique
