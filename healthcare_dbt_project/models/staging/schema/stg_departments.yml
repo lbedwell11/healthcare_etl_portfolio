@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_departments
+    description: Staging model for department detail
+    columns:
+      - name: costcenter_id
+        description: Unique key for this table
+        data_tests:
+          - unique
+          - not_null
+      - name: entity_id
+      - name: department_id
+      - name: department_name
+      - name: clinical_group
