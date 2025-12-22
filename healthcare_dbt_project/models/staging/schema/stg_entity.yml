@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_entity
+    description: Staging model for entity detail
+    columns:
+      - name: entity_id
+        description: Unique key for this table
+        data_tests:
+          - unique
+          - not_null
+      - name: entity_name

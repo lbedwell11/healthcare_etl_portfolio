@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_accounts
+    description: Staging model for account details
+    columns:
+      - name: account
+        description: Unique key for this table
+        data_tests:
+          - unique
+          - not_null
+      - name: account_name
+      - name: account_type
+      - name: account_level1
+      - name: account_level2

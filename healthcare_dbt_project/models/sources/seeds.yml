@@ -5,6 +5,7 @@ sources:
   - name: seeds
     schema: main_raw
     tables:
+      - name: accounts
       - name: billing_charges
       - name: claims
       - name: departments

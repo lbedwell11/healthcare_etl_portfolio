@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_accounts
+    description: Displays account details at 1 row per `account`
+    columns:
+      - name: account
+        description: Unique key for this table
+        data_tests:
+          - unique
+          - not_null
+      - name: account_name
+        description: |
+          Name of account
+      - name: account_type
+        description: |
+          Description of account type
+      - name: account_level1
+        description: |
+          Account level 1 grouper for associated account
+      - name: account_level2
+        description: |
+          Account level 2 grouper for associated account

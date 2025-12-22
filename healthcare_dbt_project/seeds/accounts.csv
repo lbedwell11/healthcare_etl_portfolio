@@ -1,0 +1,7 @@
+account,account_name,account_type,account_level1,account_level2
+131000,Accounts Receivable Adjustment,REVENUE,Total Operating Revenues,Other Revenue
+420000,Patient Service Revenue,REVENUE,Total Operating Revenues,Net Patient Service Revenue
+421000,Other Operating Revenue,REVENUE,Total Operating Revenues,Other Revenue
+602000,Surgical Supplies,EXPENSE,Total Operating Expenses,Non-Labor Expense
+603000,Implant Supplies,EXPENSE,Total Operating Expenses,Non-Labor Expense
+610000,OR Labor Expense,EXPENSE,Total Operating Expenses,Labor Expense
