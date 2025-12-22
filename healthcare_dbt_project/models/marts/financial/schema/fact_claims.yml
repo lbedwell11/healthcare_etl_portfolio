@@ -10,6 +10,9 @@ models:
         data_tests:
           - unique
           - not_null
+      - name: fiscal_year_period
+        description: |
+          Fiscal year period for the post date associated with claims record
       - name: mrn
         description: |
           ID associated with patient

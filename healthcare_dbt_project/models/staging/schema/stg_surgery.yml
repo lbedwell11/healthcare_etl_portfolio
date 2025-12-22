@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_surgery
+    description: Staging model for surgery data
+    columns:
+      - name: surgery_case_id
+        description: Unique key for this table
+        data_tests:
+          - unique
+          - not_null
+      - name: hospital_account_id
+      - name: mrn
+      - name: entity_id
+      - name: department_id
+      - name: service_line
+      - name: service_provider
+      - name: service_date
+      - name: posted_date
+      - name: status
+      - name: scheduled_start_time
+      - name: actual_start_time
+      - name: actual_end_time
+      - name: cpt_hcpcs_code
+      - name: or_room
+      - name: is_emergency_case

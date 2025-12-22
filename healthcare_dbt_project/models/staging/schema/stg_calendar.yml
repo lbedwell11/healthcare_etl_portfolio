@@ -1,0 +1,14 @@
+ersion: 2
+
+models:
+  - name: stg_calendar
+    description: Staging model for calendar data
+    columns:
+      - name: calendar_date
+        description: Unique key for this table
+        data_tests:
+          - unique
+          - not_null
+      - name: fiscal_year
+      - name: fiscal_month
+      - name: fiscal_year_period

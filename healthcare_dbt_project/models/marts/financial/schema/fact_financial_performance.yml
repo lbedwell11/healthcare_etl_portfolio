@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: fact_financial_performance
+    description: This model brings in general ledger data at the grain of `costcenter_id`, `journal_id`, `post_date`, `account`, `fund`, and `journal_description`
+    columns:
+      - name: general_ledger_key
+        description: Unique key for this table
+        data_tests:
+          - unique
+          - not_null
+      - name: costcenter_id
+        description: |
+          ID for cost center associated with general ledger record
+      - name: journal_id
+        description: |
+          ID for journal entry associated with general ledger record
+      - name: post_date
+        description: |
+          ID for posting date of journal entry for associated general ledger record
+      - name: fiscal_year_period
+        description: |
+          Fiscal year period for the post date associated with general ledger record
+      - name: entity_id
+        description: |
+          ID for entity associated with general ledger record
+      - name: department_id
+        description: |
+          ID for department associated with general ledger record
+      - name: account
+        description: |
+          ID for department associated with general ledger record
+      - name: fund
+        description: |
+          ID for fund associated with general ledger record
+      - name: journal_description
+        description: |
+          Journal line description of journal entry associated with general ledger record
+      - name: amount
+        description: |
+          Dollar amount associated with general ledger record

@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_general_ledger
+    description: Staging model for general ledger data
+    columns:
+      - name: general_ledger_key
+        description: Unique key for this table
+        data_tests:
+          - unique
+          - not_null
+      - name: costcenter_id
+      - name: journal_id
+      - name: post_date
+      - name: entity_id
+      - name: department_id
+      - name: account
+      - name: fund
+      - name: journal_description
+      - name: amount
