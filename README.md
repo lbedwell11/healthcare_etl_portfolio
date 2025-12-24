@@ -1,7 +1,24 @@
 # Healthcare ETL Portfolio
 
 ## Purpose
-This repository was created to help showcase my ETL/ELT (extract, transform, load / extract, load, transform) and modeling skills as an analytics engineer via projects using SQL, R, Python, and other technologies. The sources and processes here are targeted towards a healthcare focus that I've either worked on or have wanted to build up projects for, but these processes can be translated towards other industries as well.
+This repository showcases end-to-end ETL/ELT (extract, transform, load / extract, load, transform) and data modeling workflows built to support analytics, reporting, and decision-making use cases in a healthcare context.
+
+The project(s) here demonstrate how I design, build, and maintain analytics-ready datasets using SQL, R, Python, dbt and other technologies. While the examples here are healthcare-focused and informed by real-world workflows I've supported professionally, the patterns and techniques are broadly applicable across industries. 
+
+This repository is actively under development and reflects an evolving analytics engineering portfolio.
 
 ## Data Sources
-Because this repo is public, all data used here is made up by myself or otherwise cited from it's source. 
+All data used in this repository is either:
+- Fully synthetic and generated for demonstration purposes, or
+- Publicly available datasets cited from it's source within the project documentation
+
+*No proprietary, PHI, or confidential data is used.*
+
+## Project Focus Areas
+- ETL/ELT pipeline design and orchestration
+- Data transformation and analytics modeling
+- SQL-based data validation and quality checks
+- dbt models and testing
+- Analytics-ready datasets for Business Intelligence (BI) and downstream analysis
+
+Additional projects and documentation will be added as development continues.
