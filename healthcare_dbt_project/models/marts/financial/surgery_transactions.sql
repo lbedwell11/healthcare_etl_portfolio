@@ -1,0 +1,22 @@
+select
+    surgery_transactions_key,
+    fiscal_year,
+    fiscal_year_period,
+    surgery_case_id,
+    hospital_account_id,
+    mrn,
+    entity_id,
+    department_id,
+    service_line,
+    service_provider,
+    service_date,
+    posted_date,
+    case_status,
+    scheduled_start_time,
+    actual_start_time,
+    actual_end_time,
+    cpt_hcpcs_code,
+    or_room,
+    is_emergency_case,
+    total_charges
+from {{ ref('prep_surgery_transactions') }}

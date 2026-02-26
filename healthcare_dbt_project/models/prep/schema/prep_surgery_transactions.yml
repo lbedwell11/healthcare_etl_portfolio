@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: prep_surgery_transactions
+    description: |
+      This model combines surgery case data with total billing charges at 1 row per `surgery_case_id` and `hospital_account_id`.
+    columns:
+      - name: surgery_transactions_key
+        description: Unique key for this table
+        data_tests:
+          - unique
+          - not_null
+      - name: fiscal_year
+        description: Fiscal period associated with grain
+      - name: fiscal_year_period
+        description: Fiscal year period associated with grain
+      - name: surgery_case_id
+        description: ID of surgery case
+      - name: hospital_account_id
+        description: ID of hospital_account_id
+      - name: mrn
+        description: ID of MRN
+      - name: entity_id
+        description: ID of entity
+      - name: department_id
+        description: ID of department
+      - name: service_line
+        description: Description of service line
+      - name: service_provider
+        description: Name of service provider
+      - name: service_date
+        description: Date of service
+      - name: posted_date
+        description: Date of posting
+      - name: case_status
+        description: Description of case status
+      - name: scheduled_start_time
+        description: Time of scheduled start
+      - name: actual_start_time
+        description: Time of actual start
+      - name: actual_end_time
+        description: Time of actual end
+      - name: cpt_hcpcs_code
+        description: Billing code related to case
+      - name: or_room
+        description: ID of OR room
+      - name: is_emergency_case
+        description: Boolean flag indicating emergency case
+      - name: total_charges
+        description: Amount of total charges assocated with grain
