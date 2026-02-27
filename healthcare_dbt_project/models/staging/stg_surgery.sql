@@ -18,10 +18,10 @@ source as (
         cast(actual_end_time as datetime) as actual_end_time,
         cast(cpt_hcpcs_code as varchar) as cpt_hcpcs_code,
         or_room,
-        case 
-            when emergency_flag = 'Y' then 1 
-            else 0 
-            end as is_emergency_case
+        case
+            when emergency_flag  = 'Y' then true 
+            else false 
+        end as is_emergency_case
     from {{ source('seeds', 'surgery') }}
 
 )
