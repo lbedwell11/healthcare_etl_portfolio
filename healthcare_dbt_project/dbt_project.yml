@@ -39,8 +39,10 @@ models:
       +schema: dimensions
     marts:
       +materialized: view
-      +schema: clinical
-      +schema: financial
+      clinical:
+        +schema: clinical
+      financial:
+        +schema: financial
     prep:
       +materialized: ephemeral
     staging:
@@ -48,4 +50,3 @@ models:
 seeds:
   healthcare_dbt_project:
     +schema: raw
-    

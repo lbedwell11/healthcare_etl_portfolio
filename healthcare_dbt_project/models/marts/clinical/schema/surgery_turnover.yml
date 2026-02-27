@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: surgery_turnover
+    escription: |
+      This model calculates surgery turnover metrics at 1 row per `surgery_case_id` and 'hospital_account_id'.
+    columns:
+      - name: surgery_turnover_key
+        description: Unique key for this table
+        data_tests:
+          - not_null
+          - unique
+      - name: fiscal_year
+        description: Fiscal period associated with grain
+      - name: fiscal_year_period
+        description: Fiscal year period associated with grain
+      - name: surgery_case_id
+        description: ID of surgery case
+      - name: hospital_account_id
+        description: ID of hospital_account_id
+      - name: mrn
+        description: ID of MRN
+      - name: posted_date
+        description: Date of posting
+      - name: case_status
+        description: Description of case status
+      - name: or_room
+        description: ID of OR room
+      - name: is_emergency_case
+        description: Boolean flag indicating emergency case
+      - name: on_time_minutes
+        description: |
+          Amount in minutes that case was on time (actual start - scheduled start)
+      - name: surgery_minutes
+        description: |
+          Amount in minutes of case duration (actual end - actual start)
