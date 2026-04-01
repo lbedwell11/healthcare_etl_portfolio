@@ -22,4 +22,3 @@ All data used in this repository is either:
 - Analytics-ready datasets for Business Intelligence (BI) and downstream analysis
 
 Additional projects and documentation will be added as development continues.
-This is a test.
