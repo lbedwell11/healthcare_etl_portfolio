@@ -19,6 +19,9 @@ models:
     dimensions:
       +materialized: view
       +schema: dimensions
+    intermediate:
+      +materialized: incremental
+      +schema: intermediate
     marts:
       +materialized: view
       clinical:
