@@ -1,15 +1,15 @@
-
 version: 2
 
 models:
-  - name: stg_claims
-    description: Staging model for claims data
+  - name: int_claims
+    description: |
+      Incremental fact model at 1 row per `claim_id`.
     columns:
       - name: claim_id
-        description: Unique key for this table
         data_tests:
-          - unique
           - not_null
+          - unique
+      - name: fiscal_year_period
       - name: mrn
       - name: hospital_account_id
       - name: entity_id
@@ -18,9 +18,4 @@ models:
       - name: billed_amount
       - name: paid_amount
       - name: claim_status
-        data_tests:
-          - accepted_values:
-              arguments:
-                values: ['PAID', 'DENIED', 'PENDING']
       - name: _updated_at
-

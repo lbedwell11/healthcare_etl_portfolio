@@ -11,7 +11,8 @@ source as (
         cast(posted_date as date) as posted_date,
         cast(billed_amount as float) as billed_amount,
         cast(paid_amount as float) as paid_amount,
-        claim_status
+        claim_status,
+        {{ dbt.current_timestamp() }} as _updated_at
     from {{ source('seeds', 'claims') }}
 
 )
@@ -25,5 +26,6 @@ select
     posted_date,
     billed_amount,
     paid_amount,
-    claim_status
+    claim_status,
+    _updated_at
 from source
