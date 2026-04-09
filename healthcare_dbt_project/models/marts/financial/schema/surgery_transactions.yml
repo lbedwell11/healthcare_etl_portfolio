@@ -28,6 +28,10 @@ models:
         description: Description of service line
       - name: service_provider
         description: Name of service provider
+        data_tests:
+          - relationships:
+              to: ref('dim_providers')
+              field: provider_id
       - name: service_date
         description: Date of service
       - name: posted_date
