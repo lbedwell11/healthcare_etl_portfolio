@@ -37,3 +37,6 @@ models:
       - name: claim_status
         description: |
           Status of clain associated with claim record
+      - name: _updated_at
+        description: |
+          Datetime when last updated.
