@@ -28,6 +28,8 @@ models:
         +schema: clinical
       financial:
         +schema: financial
+      metrics:
+        +schema: metrics
     prep:
       +materialized: ephemeral
     staging:
