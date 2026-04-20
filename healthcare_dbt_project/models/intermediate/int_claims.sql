@@ -29,7 +29,7 @@ stg_claims as (
         billed_amount,
         paid_amount,
         claim_status,
-        _updated_at
+        _ingested_at as _updated_at
     from {{ ref('stg_claims') }}
 
 ),
@@ -69,5 +69,10 @@ select
 from fact_claims
 
 {% if is_incremental() %}
-where _updated_at >= (select coalesce(max(_updated_at),'1900-01-01') from {{ this }} )
+where _updated_at > (select max(_updated_at) from {{ this }} )
 {% endif %}
+/*
+left off trying to fix the incremental logic to behave as expected
+right now, it's writing the _updated_at datetime as the same for each row
+when I've added in new rows to test this functionality
+*/
