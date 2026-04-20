@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: metrics_entity_performance
+    description: |
+      Metrics model that aggregates ...
+    columns:
+      - name: metrics_entity_performance_key
+        description: |
+          Unique key for the table. 
+        data_tests:
+          - not_null
+          - unique
+        data_type: varchar
+      - name: fiscal_year_period
+        description: |
+          The fiscal year period associated with the metric.
+        data_type: varchar
+      - name: entity_id
+        description: |
+          The ID associated with the entity.
+        data_type: varchar
+      - name: total_claims
+        description: |
+          The total number of claims for associated grain.
+        data_type: numeric
+      - name: total_billed_amount
+        description: |
+          The total billed amount for assocated grain.
+        data_type: numeric
+      - name: total_paid_amount
+        description: |
+          The total paid amount for assocated grain.
+        data_type: numeric
+      - name: total_denied_claims
+        description: |
+          The total number of denied claims for assocated grain.
+        data_type: numeric
+      - name: denial_rate
+        description: |
+          The total denial rate for assocated grain.
+        data_type: numeric
+      - name: payment_percentage
+        description: |
+          The payment percentage for assocated grain.
+        data_type: numeric
