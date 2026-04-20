@@ -11,7 +11,8 @@ source as (
         cast(posted_date as date) as posted_date,
         cast(billed_amount as float) as billed_amount,
         cast(paid_amount as float) as paid_amount,
-        claim_status
+        claim_status,
+        cast(_ingested_at as datetime) as _ingested_at
     from {{ source('seeds', 'claims') }}
 
 )
@@ -25,5 +26,6 @@ select
     posted_date,
     billed_amount,
     paid_amount,
-    claim_status
+    claim_status,
+    _ingested_at
 from source
