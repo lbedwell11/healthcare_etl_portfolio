@@ -14,7 +14,8 @@ source as (
         cast(cpt_hcpcs_code as varchar) as cpt_hcpcs_code,
         cast(service_provider as varchar) as service_provider_id,
         cast(quantity as float) as quantity,
-        cast(amount as float) as amount
+        cast(amount as float) as amount,
+        cast(_ingested_at as datetime) as _ingested_at
     from {{ source('seeds', 'billing_charges') }}
     
 )
@@ -31,5 +32,6 @@ select
     cpt_hcpcs_code,
     service_provider_id,
     quantity,
-    amount
+    amount,
+    _ingested_at
 from source

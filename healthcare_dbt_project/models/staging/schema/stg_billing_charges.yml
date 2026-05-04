@@ -21,3 +21,4 @@ models:
       - name: service_provider_id
       - name: quantity
       - name: amount
+      - name: _ingested_at
