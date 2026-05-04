@@ -3,7 +3,7 @@ version: 2
 models:
   - name: metrics_entity_performance
     description: |
-      Metrics model that aggregates ...
+      Metrics model that aggregates entity performance at 1 row per `fiscal_year_period` and `entity_id`.
     columns:
       - name: metrics_entity_performance_key
         description: |
