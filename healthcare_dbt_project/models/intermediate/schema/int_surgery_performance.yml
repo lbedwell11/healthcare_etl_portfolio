@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: int_surgery_performance
+    description: |
+      Aggregated surgery metrics at 1 row per `fiscal_year_period`.
+    columns:
+    - name: surgery_performance_key
+      description: Unique key for the table.
+      data_tests:
+          - not_null
+          - unique
+      data_type: text
+    - name: fiscal_year
+      description: The fiscal year associated with grain.
+      data_type: text
+    - name: fiscal_year_period
+      description: The fiscal year period associated with grain.
+      data_type: text
+    - name: surgery_cases
+      description: Total number of surgical cases associated with grain.
+      data_type: numeric
+    - name: charge_per_case
+      description: Total charge amount per case associated with grain.
+      data_type: numeric
+    - name: minutes_per_case
+      description: Total number of surgical minutes per case associated with grain.
+      data_type: numeric
+    - name: avg_on_time_minutes
+      description: |
+        Average number of minutes indicating delta between scheduled and start time associated with grain.
+      data_type: numeric
+    - name: avg_surgery_minutes
+      description: Average number of surgical minutes associated with grain.
+      data_type: numeric
+    - name: _updated_at
+      description: Datetime when last updated.
+      data_type: timestamp_tz

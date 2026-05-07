@@ -1,5 +1,6 @@
 select
     surgery_transactions_key,
+    surgery_case_key,
     fiscal_year,
     fiscal_year_period,
     surgery_case_id,

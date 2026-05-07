@@ -11,10 +11,10 @@ dim_calendar as (
 
 ),
 
-
 surgery as (
 
     select
+        surgery_case_key,
         surgery_case_id,
         hospital_account_id,
         mrn,
@@ -30,8 +30,10 @@ surgery as (
         actual_end_time,
         cpt_hcpcs_code,
         or_room,
-        is_emergency_case
+        is_emergency_case,
+        _ingested_at as _updated_at
     from {{ ref('stg_surgery') }}
+    where is_completed_case
 
 ),
 
@@ -57,6 +59,7 @@ billing_charges as (
 surgery_transactions as (
 
     select
+        surgery.surgery_case_key,
         surgery.surgery_case_id,
         surgery.hospital_account_id,
         surgery.mrn,
@@ -73,6 +76,7 @@ surgery_transactions as (
         surgery.cpt_hcpcs_code,
         surgery.or_room,
         surgery.is_emergency_case,
+        surgery._updated_at,
         billing_charges.total_charges,
         dim_calendar.fiscal_year,
         dim_calendar.fiscal_year_period
@@ -89,6 +93,7 @@ select
         'surgery_case_id',
         'hospital_account_id'
     ]) }} as surgery_transactions_key,
+    surgery_case_key,
     fiscal_year,
     fiscal_year_period,
     surgery_case_id,
@@ -107,5 +112,6 @@ select
     cpt_hcpcs_code,
     or_room,
     is_emergency_case,
-    total_charges
+    total_charges,
+    _updated_at
 from surgery_transactions

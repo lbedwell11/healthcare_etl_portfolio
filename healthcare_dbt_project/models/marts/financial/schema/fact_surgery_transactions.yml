@@ -10,6 +10,11 @@ models:
         data_tests:
           - unique
           - not_null
+      - name: surgery_case_key
+        description: Unique key for this surgical case
+        data_tests:
+          - unique
+          - not_null
       - name: fiscal_year
         description: Fiscal period associated with grain
       - name: fiscal_year_period

@@ -18,15 +18,21 @@ source as (
         cast(actual_end_time as datetime) as actual_end_time,
         cast(cpt_hcpcs_code as varchar) as cpt_hcpcs_code,
         or_room,
+        cast(_ingested_at as datetime) as _ingested_at,
         case
             when emergency_flag  = 'Y' then true 
             else false 
-        end as is_emergency_case
+        end as is_emergency_case,
+        case
+            when status = 'COMPLETED' then true
+            else false
+        end as is_completed_case
     from {{ source('seeds', 'surgery') }}
 
 )
 
 select
+    {{ dbt_utils.generate_surrogate_key (['surgery_case_id']) }} as surgery_case_key,
     surgery_case_id,
     hospital_account_id,
     mrn,
@@ -42,5 +48,7 @@ select
     actual_end_time,
     cpt_hcpcs_code,
     or_room,
-    is_emergency_case
+    _ingested_at,
+    is_emergency_case,
+    is_completed_case
 from source
