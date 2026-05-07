@@ -4,11 +4,12 @@ models:
   - name: stg_surgery
     description: Staging model for surgery data
     columns:
-      - name: surgery_case_id
-        description: Unique key for this table
+      - name: surgery_case_key
+        description: Unique key for each surgery case ID.
         data_tests:
           - unique
           - not_null
+      - name: surgery_case_id        
       - name: hospital_account_id
       - name: mrn
       - name: entity_id
@@ -23,4 +24,6 @@ models:
       - name: actual_end_time
       - name: cpt_hcpcs_code
       - name: or_room
+      - name: _ingested_at
       - name: is_emergency_case
+      - name: is_completed_case

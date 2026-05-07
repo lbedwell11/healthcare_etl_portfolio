@@ -3,10 +3,15 @@ version: 2
 models:
   - name: prep_surgery_transactions
     description: |
-      This model combines surgery case data with total billing charges at 1 row per `surgery_case_id` and `hospital_account_id`.
+      This model combines completed surgery case data with total billing charges at 1 row per `surgery_case_id` and `hospital_account_id`.
     columns:
       - name: surgery_transactions_key
         description: Unique key for this table
+        data_tests:
+          - unique
+          - not_null
+      - name: surgery_case_key
+        description: Unique key for this surgical case
         data_tests:
           - unique
           - not_null
@@ -48,3 +53,6 @@ models:
         description: Boolean flag indicating emergency case
       - name: total_charges
         description: Amount of total charges assocated with grain
+      - name: _updated_at
+        description: |
+          Datetime when last updated.

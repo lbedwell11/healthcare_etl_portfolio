@@ -3,13 +3,18 @@ version: 2
 models:
   - name: prep_surgery_turnover
     description: |
-      This model calculates surgery turnover metrics at 1 row per `surgery_case_id` and 'hospital_account_id'.
+      This model calculates surgery turnover metrics for completed cases at 1 row per `surgery_case_id` and 'hospital_account_id'.
     columns:
       - name: surgery_turnover_key
         description: Unique key for this table
         data_tests:
           - not_null
           - unique
+      - name: surgery_case_key
+        description: Unique key for this surgical case
+        data_tests:
+          - unique
+          - not_null
       - name: fiscal_year
         description: Fiscal period associated with grain
       - name: fiscal_year_period
@@ -34,3 +39,6 @@ models:
       - name: surgery_minutes
         description: |
           Amount in minutes of case duration (actual end - actual start)
+      - name: _updated_at
+        description: |
+          Datetime when last updated.
