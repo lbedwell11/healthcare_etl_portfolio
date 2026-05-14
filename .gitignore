@@ -221,3 +221,7 @@ renv/python/
 renv/staging/
 
 .DS_Store
+
+# project folders
+logs/
+output/
